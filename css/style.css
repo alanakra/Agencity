@@ -1,0 +1,278 @@
+/* Agencements */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition-property: all;
+  transition-property: all;
+}
+
+:root {
+  --nav-color: #ec526b;
+  --footer-color: #eeeff3;
+  --padding-l: 300px;
+  --padding-r: 300px;
+  --padding-t: 50px;
+  --padding-b: 50px;
+  --gray: #717275;
+  --font-s-s-titre: 1.75rem;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+/* Menu de navigation */
+.nav-menu {
+  padding-left: var(--padding-l);
+  padding-right: var(--padding-r);
+  background-color: var(--nav-color);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.nav-link {
+  font-family: "Gotham-light";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.nav-link > li > a {
+  color: white;
+  text-decoration: none;
+}
+
+.account {
+  text-align: center;
+}
+
+/* Phrase d'accroche et historique d'Apart'City */
+.accroche {
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: var(--footer-color);
+}
+
+.accroche h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Gotham-black";
+  margin-bottom: 20px;
+}
+
+.s-titre {
+  color: var(--gray);
+  font-size: var(--font-s-s-titre);
+  text-transform: uppercase;
+}
+
+.key-dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.date {
+  text-align: center;
+}
+
+.date p:first-child {
+  color: var(--nav-color);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Rubrique "Notre groupe" */
+.com {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.com-photo {
+  width: 50%;
+}
+
+.com-photo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.com-reverse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.com-txt {
+  width: 50%;
+  padding-left: 1rem;
+}
+
+.com-txt p:first-child {
+  text-transform: uppercase;
+  color: #4b4b4b;
+  font-size: var(--font-s-s-titre);
+}
+
+/* Quelques chiffres */
+.few-digits {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background-color: var(--footer-color);
+}
+
+.key-digits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/* Notre marque */
+.com-txt-reverse {
+  width: 50%;
+  padding-right: 1rem;
+}
+
+.com-txt-reverse p:first-child {
+  text-transform: uppercase;
+  color: #4b4b4b;
+  font-size: var(--font-s-s-titre);
+}
+
+.our-ranges {
+  background-color: var(--nav-color);
+  color: #FFFFFF;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.our-ranges img {
+  max-width: 100%;
+  height: auto;
+}
+
+.our-ranges p:first-child {
+  text-transform: uppercase;
+  font-size: var(--font-s-s-titre);
+}
+
+.container-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.range-card {
+  text-align: center;
+  padding: 15px;
+}
+
+.range-card p:first-child {
+  color: blue;
+}
+
+.range-card-title {
+  font-size: 1.25px;
+  font-weight: bold;
+}
+
+.residences p:first-child {
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+#js-mapid {
+  height: 370px;
+}
+
+@media (min-width: 1200px) {
+  .nav-menu,
+  .accroche,
+  .com,
+  .com-reverse,
+  .few-digits,
+  .our-ranges {
+    padding-left: var(--padding-l);
+    padding-right: var(--padding-r);
+  }
+}
+
+.residences p:first-child {
+  margin-left: 300px;
+}
+
+@media (min-width: 700px) {
+  .com,
+  .com-reverse,
+  .our-brand {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .s-titre {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 414px) {
+  .s-titre {
+    margin-left: 1rem;
+  }
+  .com-photo {
+    width: 100%;
+  }
+  .com-txt {
+    width: 100%;
+    padding-left: 1rem;
+  }
+  .com,
+  .com-reverse,
+  .container-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: column;
+  }
+  .key-dates {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .com-txt-reverse {
+    width: 100%;
+    padding-right: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
