@@ -1,5 +1,5 @@
 @font-face{
- font-family: "Gotham-black";
+ font-family: 'Gotham-black';
  src: url(../fonts/gotham-black.woff), format("woff"),
  url(../fonts/gotham-black.woff2), format("woff2");
  font-weight: normal;
@@ -7,15 +7,15 @@
 }
 
 @font-face{
- font-family: "Gotham-bold";
- src: url(../fonts/gotham-bold.woff), format("woff"),
- url(../fonts/gotham-bold.woff2), format("woff2");
+ font-family: 'Gotham-bold';
+ src: url(./fonts/gotham-bold.woff), format("woff"),
+ url(./fonts/gotham-bold.woff2), format("woff2");
  font-weight: normal;
  font-style: normal;
 }
 
 @font-face{
- font-family: "Gotham-book";
+ font-family: 'Gotham-book';
  src: url(../fonts/gotham-book.woff), format("woff"),
  url(../fonts/gotham-book.woff2), format("woff2");
  font-weight: normal;
@@ -23,15 +23,15 @@
 }
 
 @font-face{
- font-family: "Gotham-light";
- src: url(../fonts/gotham-light.woff), format("woff"),
- url(../fonts/gotham-light.woff2), format("woff2");
+ font-family: 'Gotham-light';
+ src: url(fonts/gotham-light.woff), format("woff"),
+ url(fonts/gotham-light.woff2), format("woff2");
  font-weight: normal;
  font-style: normal;
 }
 
 @font-face{
- font-family: "Gotham-medium";
+ font-family: 'Gotham-medium';
  src: url(../fonts/gotham-medium.woff), format("woff"),
  url(../fonts/gotham-medium.woff2), format("woff2");
  font-weight: normal;

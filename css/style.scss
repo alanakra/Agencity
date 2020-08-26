@@ -1,3 +1,5 @@
+@import 'fonts';
+
 /* Agencements */
 *,
 *::before,
@@ -11,11 +13,11 @@
 :root {
  --nav-color: #ec526b;
  --footer-color: #eeeff3;
- --padding-l: 300px;
- --padding-r: 300px;
+ --gray: #717275; 
+ --padding-l: 250px;
+ --padding-r: 250px;
  --padding-t: 50px;
  --padding-b: 50px;
- --gray: #717275;
  --font-s-s-titre: 1.75rem;
 }
 
@@ -23,7 +25,7 @@
  text-decoration: underline;
 }
 
-@mixin padding-l-r-300() {
+@mixin padding-l-r-250() {
  padding-left: var(--padding-l);
  padding-right: var(--padding-r);
 }
@@ -43,15 +45,22 @@
 }
 
 /* Menu de navigation */
-
-.nav-menu {
- @include padding-l-r-300();
+nav{
  background-color: var(--nav-color);
  color: white;
+}
+
+.nav-menu {
  display: flex;
  height: 70px;
  justify-content: space-around;
 }
+
+.logo-enapparte {
+ max-height: 41px;
+ border-radius: 3px;
+}
+
 
 .nav-link {
  font-family: "Gotham-light";
@@ -68,6 +77,20 @@
 
 .account {
  text-align: center;
+}
+
+.nav-menu-mobile{
+ display: flex;
+ justify-content: space-around;
+ text-transform: uppercase; 
+ padding-top: 6px;
+ padding-bottom: 6px;
+}
+
+.menu-mob,.menu-user{
+ padding: 0.4rem;
+ border: solid #FFFFFF 1px;
+ border-radius: 3px;
 }
 
 /* Phrase d'accroche et historique d'Apart'City */
@@ -160,7 +183,7 @@
  }
 }
 
-// Nos gammes
+/* Nos gammes */ 
 .our-ranges {
  background-color: var(--nav-color);
  color: #FFFFFF;
@@ -192,20 +215,77 @@
 }
 
 .range-card-title {
- font-size: 1.25px;
  font-weight: bold;
+ font-size: 1.25rem;
 }
 
-// Nos résidences
+/*Nos résidences*/ 
 .residences {
+ padding-top: 35px;
+ padding-bottom: 35px;
+
  p:first-child {
   text-transform: uppercase;
   color: var(--gray);
+  font-size: var(--font-s-s-titre);
+ }
+
+ #js-mapid {
+  height: 370px;
  }
 }
 
-#js-mapid {
- height: 370px;
+/*Contact*/ 
+.upper-part{
+ display: flex;
+ justify-content: space-around;
+ padding-top: 35px;
+ padding-bottom: 35px;
+}
+
+.contact-card{
+ text-align: center;
+
+ select{
+  width: 100%;
+  text-transform: uppercase;
+  height: 2rem;
+ }
+
+ p:first-child{
+  text-transform: uppercase;
+  color: #666666;
+ }
+}
+
+.lower-part{
+ background-color: var(--footer-color);
+ padding-top: 35px;
+ padding-bottom: 35px;
+}
+
+.middle{
+ padding-bottom: 50px;
+}
+
+.fab-logo{
+  font-size: 4rem;
+  margin-right: 1rem;
+}
+
+.end{
+ display: flex;
+ justify-content: space-around;
+
+ .footer-list{
+  list-style: none;
+  color: #696a6d;
+
+  li:first-child{
+   font-weight: bold;
+   margin-bottom: 1rem;
+  }
+ }
 }
 
 
@@ -222,16 +302,19 @@
  .com,
  .com-reverse,
  .few-digits,
- .our-ranges {
-  @include padding-l-r-300();
+ .our-ranges,
+ .upper-part,
+ .lower-part {
+  @include padding-l-r-250();
+ }
+
+ .residences {
+  p:first-child {
+   margin-left: 250px;
+  }
  }
 }
 
-.residences {
- p:first-child {
-  margin-left: 300px;
- }
-}
 
 @media(min-width: 700px) {
 
@@ -244,10 +327,20 @@
  .s-titre {
   @include margin-b-30();
  }
+
+ .nav-menu-mobile{
+  display: none;
+ }
 }
 
-// Media queries <= 414px (iPhone XS Max)
-@media(max-width: 414px) {
+@media(max-width: 700px){
+ // On cache la version responsive de la navbar
+ .nav-menu{
+  display: none;
+ }
+}
+
+@media(max-width: 500px){
  .s-titre {
   margin-left: 1rem;
  }
@@ -286,4 +379,44 @@
   width: 100%;
   padding-right: 1rem;
  }
+
+ .upper-part{
+  flex-direction: column;
+
+  select{
+   text-align: center;
+   width: auto;
+  }
+ }
+
+ .contact-card{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: #eeeff3 solid 1px;
+ }
+
+ div.contact-card:nth-child(3) {
+  border-bottom: #eeeff3 solid 1px;
+ }
+
+ .middle{
+  display: none;
+ }
+
+ .end{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+ } 
+
+ .container-select {
+  text-align: center;
+ }
+
+ .end .footer-list {
+  list-style: none;
+  color: #696a6d;
+  text-align: center;
+}
+ 
 }
