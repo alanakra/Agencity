@@ -12,6 +12,7 @@
 
 :root {
  --nav-color: #ec526b;
+ --background-color-select: #e94662;
  --footer-color: #eeeff3;
  --gray: #717275; 
  --padding-l: 250px;
@@ -68,6 +69,12 @@ nav{
  justify-content: space-around;
  list-style: none;
  text-transform: uppercase;
+ line-height: 4;
+ width: 60%;
+
+ li:first-child{
+  text-decoration: underline;
+ }
 }
 
 .nav-link>li>a {
@@ -77,6 +84,9 @@ nav{
 
 .account {
  text-align: center;
+ border-left-width: solid white 2px;
+ border-left-style: solid;
+ padding-left: 13px;
 }
 
 .nav-menu-mobile{
@@ -238,7 +248,7 @@ nav{
 /*Contact*/ 
 .upper-part{
  display: flex;
- justify-content: space-around;
+ justify-content: space-between;
  padding-top: 35px;
  padding-bottom: 35px;
 }
@@ -275,7 +285,7 @@ nav{
 
 .end{
  display: flex;
- justify-content: space-around;
+ justify-content: space-between;
 
  .footer-list{
   list-style: none;
@@ -287,10 +297,6 @@ nav{
   }
  }
 }
-
-
-
-
 
 
 
@@ -340,10 +346,9 @@ nav{
  }
 }
 
+
+// Les containers se mettent en colonne
 @media(max-width: 500px){
- .s-titre {
-  margin-left: 1rem;
- }
 
  .com-photo {
   width: 100%;
@@ -386,6 +391,7 @@ nav{
   select{
    text-align: center;
    width: auto;
+   border: solid #8d8e91 1px;
   }
  }
 
@@ -403,6 +409,10 @@ nav{
   display: none;
  }
 
+ .lower-part{
+  padding-top: 0;
+ }
+
  .end{
   display: flex;
   justify-content: space-around;
@@ -411,12 +421,33 @@ nav{
 
  .container-select {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-select);
+  padding-top: 1.625rem;
+  padding-bottom: 1.625rem;
+  
+  select{
+    text-align: center;
+    width: 90%;
+    text-transform: uppercase;
+    border: solid 1px #f4a3b1;
+    background-color: var(--background-color-select);
+    color: #FFFFFF;
+   }
  }
 
  .end .footer-list {
   list-style: none;
   color: #696a6d;
   text-align: center;
-}
+ }
+
+ // Cette classe permet aux éléments ciblés d'avoir des marges internes de 16 pixels
+ .s-titre,.pad-l-r-txt{
+   padding-left: 1.25rem;
+   padding-right: 1.25rem;
+ }
  
 }
