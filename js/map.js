@@ -1,5 +1,5 @@
 // Making map and tiles
-map = L.map('js-mapid').setView([48.849484899723805, 2.8250153046109254], 7);
+map = L.map('js-mapid').setView([48.844196, 2.582493], 7);
 
 const attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="https://www.mapbox.com/">Mapbox</a>';
 

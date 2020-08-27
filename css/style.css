@@ -88,6 +88,8 @@ nav {
   .nav-menu .nav-link > li > a {
     color: white;
     text-decoration: none; }
+    .nav-menu .nav-link > li > a:hover {
+      text-decoration: underline; }
   .nav-menu .account {
     text-align: center;
     border-left-width: solid white 2px;
@@ -306,9 +308,14 @@ nav {
     list-style: none;
     color: #696a6d;
     font-family: var(--f-family-rubrique); }
+    .end .footer-list li a {
+      color: #696a6d; }
+    .end .footer-list li:hover {
+      text-decoration: underline; }
     .end .footer-list li:first-child {
       font-weight: bold;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      text-decoration: none; }
 
 @media (min-width: 1200px) {
   .nav-menu,

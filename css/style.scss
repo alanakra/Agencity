@@ -111,6 +111,10 @@ nav{
   .nav-link>li>a {
     color: white;
     text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 
   .account {
@@ -412,9 +416,20 @@ nav{
   color: #696a6d;
   font-family: var(--f-family-rubrique);
 
+  li{
+    a{
+      color: #696a6d;
+    }
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
   li:first-child{
    font-weight: bold;
    margin-bottom: 1rem;
+   text-decoration: none;
   }
  }
 
