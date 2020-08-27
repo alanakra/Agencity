@@ -15,30 +15,52 @@
  --background-color-select: #e94662;
  --footer-color: #eeeff3;
  --gray: #717275; 
- --padding-l: 250px;
- --padding-r: 250px;
  --padding-t: 50px;
  --padding-b: 50px;
  --font-s-s-titre: 1.75rem;
+ --f-family-rubrique: 'Gotham-Medium';
+ --f-family-navbar: 'Gotham-Bold';
+ --f-family-s-titre: 'Gotham-Medium';
+ --f-family-k-digits: 'Gotham-Light';
+ --f-family-txt: 'Gotham-Book';
+ --f-family-g-black: 'Gotham-Black';
+}
+
+a{
+  text-decoration: none;
+}
+
+select{
+  font-family: 'Gotham-Bold';
 }
 
 .text-underline {
- text-decoration: underline;
+  text-decoration: underline;
 }
 
 @mixin padding-l-r-250() {
- padding-left: var(--padding-l);
- padding-right: var(--padding-r);
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+@mixin padding-l-r-150() {
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 @mixin padding-t-b-50() {
- padding-top: 50px;
- padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-@mixin padding-mob() {
- padding-left: 20px;
- padding-right: 20px;
+@mixin padding-l-r-20() {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@mixin padding-t-b-20 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 @mixin margin-b-30() {
@@ -49,44 +71,63 @@
 nav{
  background-color: var(--nav-color);
  color: white;
-}
-
-.nav-menu {
- display: flex;
- height: 70px;
- justify-content: space-around;
-}
-
-.logo-enapparte {
- max-height: 41px;
- border-radius: 3px;
-}
-
-
-.nav-link {
- font-family: "Gotham-light";
- display: flex;
- justify-content: space-around;
- list-style: none;
- text-transform: uppercase;
- line-height: 4;
- width: 60%;
-
- li:first-child{
-  text-decoration: underline;
+ img{
+   max-height: 41px;
+   border-radius: 3px;
  }
 }
 
-.nav-link>li>a {
- color: white;
- text-decoration: none;
-}
+.nav-menu {
+  display: flex;
+  height: 70px;
+  justify-content: space-around;
 
-.account {
- text-align: center;
- border-left-width: solid white 2px;
- border-left-style: solid;
- padding-left: 13px;
+  a {
+    color: #FFFFFF;
+  }
+
+
+  .logo-desk-enaparte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-family: var(--f-family-navbar);
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    text-transform: uppercase;
+    line-height: 4;
+    width: 60%;
+
+    li:first-child {
+      text-decoration: underline;
+    }
+  }
+
+
+  .nav-link>li>a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .account {
+    text-align: center;
+    border-left-width: solid white 2px;
+    border-left-style: solid;
+    padding-left: 13px;
+    font-family: var(--f-family-txt);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .account-name {
+      font-weight: bold;
+    }
+  }
+
 }
 
 .nav-menu-mobile{
@@ -95,6 +136,11 @@ nav{
  text-transform: uppercase; 
  padding-top: 6px;
  padding-bottom: 6px;
+ 
+ a{
+   font-family: var(--f-family-txt);
+   color: white;
+ }
 }
 
 .menu-mob,.menu-user{
@@ -108,6 +154,10 @@ nav{
  padding-top: 35px;
  padding-bottom: 30px;
  background-color: var(--footer-color);
+
+ p:first-child{
+   font-family: "Gotham-black";
+ }
 }
 
 .accroche h1 {
@@ -121,6 +171,7 @@ nav{
  color: var(--gray);
  font-size: var(--font-s-s-titre);
  text-transform: uppercase;
+ font-family: var(--f-family-s-titre);
 }
 
 .key-dates {
@@ -129,13 +180,48 @@ nav{
 }
 
 .date {
- text-align: center;
+  text-align: center;
+
+  p:first-child {
+    color: var(--nav-color);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  p:nth-child(2){
+    font-family: var(--f-family-k-digits);
+  }
 }
 
-.date p:first-child {
- color: var(--nav-color);
- font-weight: bold;
- font-size: 1.25rem;
+
+.timeline{
+  height: 3px;
+  background-color: #ec526b;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  
+  .circle{
+    width: 1.875rem;
+    height: 1.875rem;
+    border: solid #ec526b 2px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    position: relative;
+    top: -12px;
+  }
+
+  .circle-1{
+    left: -20px;
+  }
+  
+  .circle-2{
+    left: -60px;
+  }
+
+  .circle-3{
+    left: -45px;
+  }
 }
 
 /* Rubrique "Notre groupe" */
@@ -160,55 +246,74 @@ nav{
 .com-txt {
  width: 50%;
  padding-left: 1rem;
-
+ font-family: var(--f-family-txt);
+ 
  p:first-child {
-  text-transform: uppercase;
-  color: #4b4b4b;
-  font-size: var(--font-s-s-titre);
- }
+   text-transform: uppercase;
+   color: #4b4b4b;
+   font-size: var(--font-s-s-titre);
+   font-family: var(--f-family-rubrique)
+  }
 }
 
 /* Quelques chiffres */
 .few-digits {
- padding-top: 35px;
- padding-bottom: 35px;
- background-color: var(--footer-color);
+  padding-top: 36px;
+  padding-bottom: 36px;
+  background-color: var(--footer-color);
 }
 
 .key-digits {
- display: flex;
- flex-wrap: wrap;
- justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .digit {
+    text-align: center;
+  
+    p:first-child {
+      color: var(--nav-color);
+      font-weight: bold;
+      font-size: 1.25rem;
+      font-family: var(--f-family-g-black);
+    }
+  
+    p:nth-child(2){
+      font-family: var(--f-family-k-digits);
+    }
+  }
 }
 
 /* Notre marque */
 .com-txt-reverse {
- width: 50%;
- padding-right: 1rem;
-
- p:first-child {
-  text-transform: uppercase;
-  color: #4b4b4b;
-  font-size: var(--font-s-s-titre);
- }
+  width: 50%;
+  padding-right: 1rem;
+  font-family: var(--f-family-txt);
+  
+  p:first-child {
+    text-transform: uppercase;
+    color: #4b4b4b;
+    font-size: var(--font-s-s-titre);
+    font-family: var(--f-family-rubrique);
+  }
 }
 
 /* Nos gammes */ 
 .our-ranges {
- background-color: var(--nav-color);
- color: #FFFFFF;
- padding-top: 35px;
- padding-bottom: 35px;
-
- img {
-  max-width: 100%;
-  height: auto;
- }
-
- p:first-child {
-  text-transform: uppercase;
-  font-size: var(--font-s-s-titre);
- }
+  background-color: var(--nav-color);
+  color: #FFFFFF;
+  font-family: var(--f-family-txt);
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  p:first-child {
+    text-transform: uppercase;
+    font-size: var(--font-s-s-titre);
+    font-family: var(--f-family-rubrique);
+  }
 }
 
 .container-card {
@@ -219,15 +324,18 @@ nav{
  text-align: center;
  padding: 15px;
 
- p:first-child {
-  color: blue;
+ .range-card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: var(--f-family-rubrique);
+  text-transform: uppercase;
+ }
+
+ .range-card-s-title{
+   font-weight: bold;
  }
 }
 
-.range-card-title {
- font-weight: bold;
- font-size: 1.25rem;
-}
 
 /*Nos résidences*/ 
 .residences {
@@ -238,6 +346,7 @@ nav{
   text-transform: uppercase;
   color: var(--gray);
   font-size: var(--font-s-s-titre);
+  font-family: var(--f-family-rubrique);
  }
 
  #js-mapid {
@@ -255,6 +364,8 @@ nav{
 
 .contact-card{
  text-align: center;
+ font-family: var(--f-family-rubrique);
+ font-size: 0.875rem;
 
  select{
   width: 100%;
@@ -265,6 +376,11 @@ nav{
  p:first-child{
   text-transform: uppercase;
   color: #666666;
+  font-size: 1rem;
+ }
+
+ a{
+   color: #000000;
  }
 }
 
@@ -287,15 +403,21 @@ nav{
  display: flex;
  justify-content: space-between;
 
+ select{
+   height: 2rem;
+ }
+
  .footer-list{
   list-style: none;
   color: #696a6d;
+  font-family: var(--f-family-rubrique);
 
   li:first-child{
    font-weight: bold;
    margin-bottom: 1rem;
   }
  }
+
 }
 
 
@@ -319,36 +441,96 @@ nav{
    margin-left: 250px;
   }
  }
-}
-
-
-@media(min-width: 700px) {
-
- .com,
- .com-reverse,
- .our-brand {
-  @include padding-t-b-50();
- }
-
- .s-titre {
-  @include margin-b-30();
- }
 
  .nav-menu-mobile{
   display: none;
  }
 }
 
-@media(max-width: 700px){
- // On cache la version responsive de la navbar
- .nav-menu{
-  display: none;
- }
+@media(min-width: 1200px) {
+ .nav-menu,
+ .accroche,
+ .com,
+ .com-reverse,
+ .few-digits,
+ .our-ranges,
+ .upper-part,
+ .lower-part {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+
+  .residences {
+    p:first-child {
+     margin-left: 150px;
+    }
+  }
+}
+
+@media(max-width:1200px){
+  // On cache la version responsive de la navbar
+  .nav-menu{
+    display: none;
+  }
+}
+
+
+@media(min-width: 700px) {
+  
+  .com,
+  .com-reverse,
+  .our-brand {
+    @include padding-t-b-50();
+  }
+  
+  .s-titre {
+    @include margin-b-30();
+  }
+
+  .our-ranges{
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .container-select {
+    width: 20%;
+   }
+
+   .lang {
+    width: 100%;
+    background-color: #eeeff3;
+    font-weight: bold;
+    color: #696a7d;
+   }
+      
+  
+}
+
+@media(min-width:700px) and (max-width:1200px){
+  .accroche,
+  .com,
+  .few-digits,
+  .com-reverse,
+  .our-ranges,
+  .upper-part,
+  .lower-part {
+    @include padding-l-r-20()
+  }
+  
+  .residences {
+    p:first-child {
+    margin-left: 1.25rem;
+    }
+  }
 }
 
 
 // Les containers se mettent en colonne
-@media(max-width: 500px){
+@media(max-width: 700px){
+
+  .timeline{
+    display: none;
+  }
 
  .com-photo {
   width: 100%;
@@ -390,7 +572,7 @@ nav{
 
   select{
    text-align: center;
-   width: auto;
+   width: 90%;
    border: solid #8d8e91 1px;
   }
  }
@@ -445,9 +627,20 @@ nav{
  }
 
  // Cette classe permet aux éléments ciblés d'avoir des marges internes de 16 pixels
+ .pad-l-r-txt{
+    @include padding-t-b-20();
+  }
+
  .s-titre,.pad-l-r-txt{
-   padding-left: 1.25rem;
-   padding-right: 1.25rem;
+   @include padding-l-r-20();
+ }
+
+ .hide-list{
+   display: none;
+ }
+
+ .central-list{
+   padding-top: 24px;
  }
  
 }

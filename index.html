@@ -20,8 +20,11 @@
   <nav>
 
   <div class="nav-menu">
-   <img src="./img/ENAPARTE-LOGO.png" alt="" class="logo-enapparte">
-   
+  
+  <div class="logo-desk-enaparte">
+   <img src="./img/ENAPARTE-LOGO.png" alt="" class="">
+  </div> 
+
    <ul class="nav-link">
      <li><a href="#">Le groupe</a></li>
      <li><a href="#">Mes opérations</a></li>
@@ -31,16 +34,20 @@
     </ul>
     
     <div class="account">
-      <p class="account-name">Mr Durand</p>
-      <p>Mon compte</p>
+      <div>
+       <a href="#">
+        <p class="account-name">Alan AKRA</p>
+        <p>Mon compte</p>
+       </a>
+      </div>
     </div>
   </div>
   
   <!-- La navbar en version mobile qui est affichée en dessous d'un certain niveau de pixels de largeur -->
   <div class="nav-menu-mobile">
-    <p class="menu-mob">Menu</p>
-    <img src="./img/ENAPARTE-LOGO.png" alt="" class="logo-enapparte">
-    <i class="fas fa-user menu-user"></i>
+    <a class="menu-mob" href="#">Menu</a>
+    <img src="./img/ENAPARTE-LOGO.png" alt="" class="logo-mobile-enapparte">
+    <a href="#"><i class="fas fa-user menu-user"></i></a>
   </div> 
 
   </nav>
@@ -66,13 +73,20 @@
    </div>
   </div>
 
+  <!-- La frise chronologique -->
+  <div class="timeline">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
  </div>
 
  <!-- Rubrique "Notre groupe" -->
  <div class="com">
 
   <div class="com-photo">
-   <img src="./img/omar-lopez-1qfy-jDc_jo-unsplash-550.jpg">
+   <img src="./img/omar-lopez-1qfy-jDc_jo-unsplash-750.jpg">
   </div>
 
   <div class="com-txt pad-l-r-txt">
@@ -94,32 +108,33 @@
 
  <!-- Quelques chiffres -->
  <div class="few-digits">
-  <p class="s-titre">Quelques chiffres:</p>
-  <div class="key-digits">
-   <div class="date">
-    <p>13 000</p>
-    <p>Appartements</p>
+   <p class="s-titre">Quelques chiffres:</p>
+   <div class="key-digits">
+       <div class="digit">
+         <p>13 000</p>
+         <p>Appartements</p>
+       </div>
+       <div class="digit">
+         <p>114</p>
+         <p>Résidences</p>
+       </div>
+
+       <div class="digit">
+         <p>9500</p>
+         <p>Propriétaires</p>
+       </div>
+       <div class="digit">
+         <p>1100</p>
+         <p>Collaborateurs</p>
+       </div>
    </div>
-   <div class="date">
-    <p>114</p>
-    <p>Résidences</p>
-   </div>
-   <div class="date">
-    <p>9500</p>
-    <p>Propriétaires</p>
-   </div>
-   <div class="date">
-    <p>1100</p>
-    <p>Collaborateurs</p>
-   </div>
-  </div>
  </div>
 
  <!-- Notre marque -->
  <div class="com-reverse">
 
   <div class="com-photo">
-   <img src="./img/francesca-tosolini-w1RE0lBbREo-unsplash-550.jpg">
+   <img src="./img/francesca-tosolini-w1RE0lBbREo-unsplash-750.jpg">
   </div>
 
   <div class="com-txt-reverse pad-l-r-txt">
@@ -142,8 +157,8 @@
   <div class="container-card">
    <div class="range-card">
     <img src="./img/deborah-cortelazzi-gREquCUXQLI-unsplash-480.jpg" alt="">
-    <p class="range-card-title">L'appart-hôtel prix malin !</p>
-    <p>Lorem ipsum dolor sit amet.</p>
+    <p class="range-card-title">L'appart-hôtel à prix malin !</p>
+    <p class="range-card-s-title">Lorem ipsum dolor sit amet.</p>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis cupiditate nulla recusandae exercitationem
      modi qui accusantium aperiam tempora nemo! Dignissimos quia repudiandae labore ipsa cumque blanditiis accusantium
      exercitationem pariatur ratione?</p>
@@ -151,8 +166,8 @@
 
    <div class="range-card">
     <img src="./img/roberto-nickson-tleCJiDOri0-unsplash-480.jpg" alt="">
-    <p class="range-card-title">L'appart'hôtel confort et design</p>
-    <p>Lorem ipsum dolor sit amet.</p>
+    <p class="range-card-title">L'appart'hôtel confort et design !</p>
+    <p class="range-card-s-title">Lorem ipsum dolor sit amet.</p>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis cupiditate nulla recusandae exercitationem
      modi qui accusantium aperiam tempora nemo! Dignissimos quia repudiandae labore ipsa cumque blanditiis accusantium
      exercitationem pariatur ratione?</p>
@@ -179,11 +194,11 @@
 
       <div class="contact-card">
         <p>Vos référents régionaux</p>
-        <select name="choose-region" id="choose-region">
+        <select name="choose-region" id="choose-region" class="choose-region">
           <option value="nord-ouest">Nord-ouest</option>
         </select>
         <p>Mlle Cluzel - tel : 06 87 71 52 27</p>
-        <p><a href="mailto:Pro@appartcity.com">Contact: Pro@appartcity.com</a></p>
+        <p>Contact: <a href="mailto:Pro@appartcity.com">Pro@appartcity.com</a></p>
       </div>
       
       <div class="contact-card">
@@ -203,19 +218,19 @@
     <div class="end">
 
       <div class="container-select">
-       <select name="lang" id="lang">
+       <select name="lang" id="lang" class="lang">
          <option value="francais">Français</option>
        </select>
       </div> 
 
-      <ul class="footer-list">
+      <ul class="footer-list hide-list">
         <li>Nos offres</li>
         <li>Offres promotionnelles</li>
         <li>Offre long séjour</li>
         <li>Offre étudiants</li>
       </ul>
 
-      <ul class="footer-list">
+      <ul class="footer-list central-list">
         <li>Propriétaires</li>
         <li>Mes opérations</li>
         <li>Mon compte</li>
@@ -223,11 +238,11 @@
         <li>Contact</li>
       </ul>
 
-      <ul class="footer-list">
+      <ul class="footer-list hide-list">
         <li>Nos solutions pros</li>
         <li>Agence de voyage</li>
-        <li>Offre long séjour</li>
-        <li>Offre étudiants</li>
+        <li>Tour opérateurs - Autocaristes</li>
+        <li>Comité d'entreprise</li>
       </ul>
 
     </div>
@@ -235,16 +250,6 @@
 
    </footer>
 
- <script>
-   console.log('Largeur: ' + window.innerWidth);
-   console.log('Hauteur: ' + window.innerHeight);
-   
-  window.addEventListener('resize', function () {
-   console.clear();
-   console.log('Largeur: ' + window.innerWidth);
-   console.log('Hauteur: ' + window.innerHeight);
-  })
- </script>
  <script src="./js/map.js"></script>
 </body>
 
