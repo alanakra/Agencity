@@ -18,12 +18,8 @@
  --padding-t: 50px;
  --padding-b: 50px;
  --font-s-s-titre: 1.75rem;
- --f-family-rubrique: 'Gotham-Medium';
- --f-family-navbar: 'Gotham-Bold';
- --f-family-s-titre: 'Gotham-Medium';
- --f-family-k-digits: 'Gotham-Light';
- --f-family-txt: 'Gotham-Book';
- --f-family-g-black: 'Gotham-Black';
+ --Medium: 'Gotham-Medium', Sans-serif;
+ --Bold: 'Gotham-Bold', Sans-serif;
 }
 
 a{
@@ -31,22 +27,14 @@ a{
 }
 
 select{
-  font-family: 'Gotham-Bold';
+  font-family: var(--Medium);
+  text-transform: uppercase;
 }
 
 .text-underline {
   text-decoration: underline;
 }
 
-@mixin padding-l-r-250() {
-  padding-left: 250px;
-  padding-right: 250px;
-}
-
-@mixin padding-l-r-150() {
-  padding-left: 150px;
-  padding-right: 150px;
-}
 
 @mixin padding-t-b-50() {
   padding-top: 50px;
@@ -56,11 +44,6 @@ select{
 @mixin padding-l-r-20() {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-
-@mixin padding-t-b-20 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 @mixin margin-b-30() {
@@ -80,7 +63,7 @@ nav{
 .nav-menu {
   display: flex;
   height: 70px;
-  justify-content: space-around;
+  justify-content: space-between;
 
   a {
     color: #FFFFFF;
@@ -94,13 +77,14 @@ nav{
   }
 
   .nav-link {
-    font-family: var(--f-family-navbar);
+    font-family: var(--Medium);
     display: flex;
     justify-content: space-around;
     list-style: none;
     text-transform: uppercase;
     line-height: 4;
     width: 60%;
+    font-size: 1.079rem;
 
     li:first-child {
       text-decoration: underline;
@@ -122,13 +106,15 @@ nav{
     border-left-width: solid white 2px;
     border-left-style: solid;
     padding-left: 13px;
-    font-family: var(--f-family-txt);
+    font-family: 'Gotham-Light';
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-size: 0.83rem;
+    
     .account-name {
       font-weight: bold;
+      font-family: var(--Medium);
     }
   }
 
@@ -142,7 +128,7 @@ nav{
  padding-bottom: 6px;
  
  a{
-   font-family: var(--f-family-txt);
+   font-family: 'Gotham-Book';
    color: white;
  }
 }
@@ -159,43 +145,45 @@ nav{
  padding-bottom: 30px;
  background-color: var(--footer-color);
 
- p:first-child{
-   font-family: "Gotham-black";
+ h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Gotham-Medium";
+  margin-bottom: 20px;
+  color: #4b4b4b;
+  font-size: 2.158rem;
  }
 }
 
-.accroche h1 {
- text-align: center;
- text-transform: uppercase;
- font-family: "Gotham-black";
- margin-bottom: 20px;
-}
-
 .s-titre {
- color: var(--gray);
- font-size: var(--font-s-s-titre);
+ color: #696a6d;
+ font-size: 1.494rem;
  text-transform: uppercase;
- font-family: var(--f-family-s-titre);
+ font-family: var(--Bold);
 }
 
 .key-dates {
  display: flex;
  justify-content: space-around;
+
+ .date {
+   text-align: center;
+   color: #4b4b4b;
+ 
+   p:first-child {
+     color: var(--nav-color);
+     font-weight: bold;
+     font-size: 1.25rem;
+     font-family: var(--Bold);
+   }
+ 
+   p:nth-child(2){
+     font-family: 'Gotham-Book';
+     font-size: 1.162rem;
+   }
+ }
 }
 
-.date {
-  text-align: center;
-
-  p:first-child {
-    color: var(--nav-color);
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-
-  p:nth-child(2){
-    font-family: var(--f-family-k-digits);
-  }
-}
 
 
 .timeline{
@@ -204,6 +192,7 @@ nav{
   margin-top: 1rem;
   display: flex;
   justify-content: space-around;
+  position: relative;
   
   .circle{
     width: 1.875rem;
@@ -214,49 +203,83 @@ nav{
     position: relative;
     top: -12px;
   }
-
+  
   .circle-1{
     left: -20px;
   }
   
   .circle-2{
-    left: -60px;
+    left: -75px;
   }
-
+  
   .circle-3{
     left: -45px;
+  }
+
+
+  //Le code CSS de la flèche
+  .arrow-horizontal {
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 20px solid #ec526b;
+    position: absolute;
+    top: -15px;
+    right: -5px;
+}
+}
+
+.timeline-mobile{
+  height: 3px;
+  width: 138px;
+  background-color: #ec526b;
+  transform: rotate(90deg);
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  
+  .circle-mobile{
+    width: 1.875rem;
+    height: 1.875rem;
+    border: solid #ec526b 2px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    position: relative;
+    top: -12px;
   }
 }
 
 /* Rubrique "Notre groupe" */
 .com {
  display: flex;
+ color: #4b4b4b;
 }
 
 .com-photo {
- width: 50%;
-
- img {
-  max-width: 100%;
-  height: auto;
- }
+  width: 50%;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .com-reverse {
- display: flex;
- flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
+  color: #4b4b4b;
 }
 
 .com-txt {
  width: 50%;
- padding-left: 1rem;
- font-family: var(--f-family-txt);
+ font-family: 'Gotham-Book';
+ font-size: 0.9375rem;
  
  p:first-child {
    text-transform: uppercase;
-   color: #4b4b4b;
-   font-size: var(--font-s-s-titre);
-   font-family: var(--f-family-rubrique)
+   font-size: 2.125rem;
+   font-family: var(--Medium);
   }
 }
 
@@ -269,21 +292,24 @@ nav{
 
 .key-digits {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
+
+  .key1, .key2{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+  }
 
   .digit {
     text-align: center;
+    color: #4b4b4b;
+    font-size: 1.162rem;
+    font-family: 'Gotham-Book';
   
     p:first-child {
       color: var(--nav-color);
-      font-weight: bold;
-      font-size: 1.25rem;
-      font-family: var(--f-family-g-black);
-    }
-  
-    p:nth-child(2){
-      font-family: var(--f-family-k-digits);
+      font-family: var(--Bold);
+      font-size: 2.49rem;
     }
   }
 }
@@ -292,13 +318,14 @@ nav{
 .com-txt-reverse {
   width: 50%;
   padding-right: 1rem;
-  font-family: var(--f-family-txt);
+  font-family: 'Gotham-Book';
+  font-size: 0.9375rem;
   
   p:first-child {
     text-transform: uppercase;
     color: #4b4b4b;
-    font-size: var(--font-s-s-titre);
-    font-family: var(--f-family-rubrique);
+    font-size: 2.125rem;
+    font-family: var(--Medium);
   }
 }
 
@@ -306,7 +333,7 @@ nav{
 .our-ranges {
   background-color: var(--nav-color);
   color: #FFFFFF;
-  font-family: var(--f-family-txt);
+  font-family: 'Gotham-Book';
   
   img {
     max-width: 100%;
@@ -315,8 +342,12 @@ nav{
   
   p:first-child {
     text-transform: uppercase;
-    font-size: var(--font-s-s-titre);
-    font-family: var(--f-family-rubrique);
+    font-size: 2.125rem;
+    font-family: var(--Medium);
+  }
+
+  .txt{
+    font-size: 1.125rem;
   }
 }
 
@@ -326,35 +357,30 @@ nav{
 
 .range-card {
  text-align: center;
- padding: 15px;
+ font-size: 1.162rem;
 
  .range-card-title {
   font-weight: bold;
-  font-size: 1.25rem;
-  font-family: var(--f-family-rubrique);
+  font-size: 2.158rem;
+  font-family: var(--Medium);
   text-transform: uppercase;
+  padding-bottom: 25px;
  }
 
  .range-card-s-title{
-   font-weight: bold;
+   font-family: 'Gotham-Bold';
  }
 }
 
 
 /*Nos résidences*/ 
 .residences {
- padding-top: 35px;
- padding-bottom: 35px;
-
- p:first-child {
+  
+  p:first-child {
   text-transform: uppercase;
-  color: var(--gray);
-  font-size: var(--font-s-s-titre);
-  font-family: var(--f-family-rubrique);
- }
-
- #js-mapid {
-  height: 370px;
+  color: #4b4b4b;
+  font-size: 2.125rem;
+  font-family: var(--Medium);
  }
 }
 
@@ -368,39 +394,44 @@ nav{
 
 .contact-card{
  text-align: center;
- font-family: var(--f-family-rubrique);
  font-size: 0.875rem;
-
+ font-family: 'Gotham-Book';
+ color: #666666;
+ font-size: 1.079rem;
+ 
  select{
-  width: 100%;
-  text-transform: uppercase;
-  height: 2rem;
+   width: 100%;
+   text-transform: uppercase;
+   height: 2rem;
+   font-family: var(--Medium);
+   color: #666666;
+   font-size: 1.079rem;
  }
 
  p:first-child{
   text-transform: uppercase;
-  color: #666666;
-  font-size: 1rem;
+  font-size: 1.162rem;
+  font-family: var(--Medium);
  }
 
  a{
-   color: #000000;
+   color: #666666;
  }
 }
 
 .lower-part{
  background-color: var(--footer-color);
- padding-top: 35px;
- padding-bottom: 35px;
 }
 
 .middle{
- padding-bottom: 50px;
+ padding-top: 24px;
+ padding-bottom: 54px;
 }
 
 .fab-logo{
   font-size: 4rem;
   margin-right: 1rem;
+  color: var(--nav-color);
 }
 
 .end{
@@ -414,7 +445,8 @@ nav{
  .footer-list{
   list-style: none;
   color: #696a6d;
-  font-family: var(--f-family-rubrique);
+  font-family: 'Gotham-Book';
+  font-size: 1.079rem;
 
   li{
     a{
@@ -430,6 +462,7 @@ nav{
    font-weight: bold;
    margin-bottom: 1rem;
    text-decoration: none;
+   font-family: var(--Medium)
   }
  }
 
@@ -437,49 +470,54 @@ nav{
 
 
 
-// Media queries >= 1200px
-@media(min-width: 1200px) {
-
- .nav-menu,
- .accroche,
- .com,
- .com-reverse,
+// Media queries >= 1500px
+@media(min-width: 1500px) {
+  .nav-menu,
+  .accroche,
+  .com,
+  .com-reverse,
  .few-digits,
  .our-ranges,
  .upper-part,
  .lower-part {
-  @include padding-l-r-250();
- }
-
- .residences {
-  p:first-child {
-   margin-left: 250px;
+   padding-left: 300px;
+   padding-right: 300px;
   }
- }
-
- .nav-menu-mobile{
-  display: none;
- }
-}
-
-@media(min-width: 1200px) {
- .nav-menu,
- .accroche,
- .com,
- .com-reverse,
- .few-digits,
- .our-ranges,
- .upper-part,
- .lower-part {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
-
+  
   .residences {
     p:first-child {
-     margin-left: 150px;
+      margin-left: 300px;
     }
   }
+  
+   .nav-menu-mobile{
+    display: none;
+   }
+
+}
+
+@media(min-width: 1200px) and (max-width: 1500px){
+  .nav-menu,
+  .accroche,
+  .com,
+  .com-reverse,
+ .few-digits,
+ .our-ranges,
+ .upper-part,
+ .lower-part {
+   padding-left: 150px;
+   padding-right: 150px;
+  }
+  
+  .residences {
+    p:first-child {
+      margin-left: 150px;
+    }
+  }
+  
+   .nav-menu-mobile{
+    display: none;
+   }
 }
 
 @media(max-width:1200px){
@@ -491,7 +529,24 @@ nav{
 
 
 @media(min-width: 700px) {
+
+  .accroche {
+    padding-bottom: 57px;
+    padding-top: 56px;
+  }   
+
+  .timeline-mobile{
+    display: none;
+  }
+
+  .m-26{
+    margin-bottom: 1.625rem;
+  }
   
+  .com-txt{  
+    padding-left: 1rem;
+  }
+
   .com,
   .com-reverse,
   .our-brand {
@@ -505,6 +560,18 @@ nav{
   .our-ranges{
     padding-top: 35px;
     padding-bottom: 35px;
+
+    p:first-child{
+      margin-bottom: 1rem;
+    }
+
+    .txt{
+      margin-bottom: 2.188rem;
+    }
+  }
+
+  .range-card{ 
+   padding: 15px;
   }
 
   .container-select {
@@ -518,6 +585,26 @@ nav{
     color: #696a7d;
    }
       
+   .residences {
+    p:first-child {
+      margin-bottom: 18px;
+      padding-top: 35px;
+    }
+
+    #js-mapid {
+      height: 596px;
+     }
+  }
+
+ .upper-part{
+  height: 258px;
+  align-items: center;
+  }
+
+  .lower-part{
+    height: 478px;
+  }
+
   
 }
 
@@ -543,6 +630,16 @@ nav{
 // Les containers se mettent en colonne
 @media(max-width: 700px){
 
+  .nav-menu-mobile{
+    justify-content: space-between;
+  }
+
+  .accroche{
+    h1{
+      font-size: 1.826rem;
+    }
+  }
+
   .timeline{
     display: none;
   }
@@ -553,7 +650,12 @@ nav{
 
  .com-txt {
   width: 100%;
-  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2.188rem;
+
+  p:first-child{
+    margin-bottom: 1.563rem;
+  }
  }
 
  .com,
@@ -575,15 +677,93 @@ nav{
   -ms-flex-pack: distribute;
   justify-content: space-around;
   flex-direction: column;
+  padding-left: 3.125rem;
+
+  .date{
+    text-align: start;
+  }
+
+  .timeline-mobile{
+    left: -35px;
+  }
  }
 
  .com-txt-reverse {
   width: 100%;
-  padding-right: 1rem;
+  padding-top: 1.875rem;
+  padding-bottom: 1.25rem;
+
+  p:first-child{
+    padding-bottom: 1.688rem;
+  }
+ }
+
+ .key-digits {
+   flex-direction: column;
+
+  .key1, .key2{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .digit {
+    font-size: 1.036rem;
+  
+    p:first-child {
+      font-size: 1.162rem;
+    }
+  }
+}
+
+ .our-ranges{
+  padding-top: 1.125rem;
+
+  p:first-child{
+    margin-bottom: 1.125rem;
+  }
+
+  .txt{
+    font-size: 0.913rem;
+  }
+
+  .range-card:nth-child(1) {
+    margin-bottom: 1.438rem;
+   }
+   
+  
+  .range-card > p:nth-child(4) {
+    font-size: 0.913rem;
+    text-align: start;
+   }
+
+   .range-card-title{
+    font-size: 1.909rem;
+   }
+
+   .range-card-s-title{
+     text-align: start;
+   }
+   
+  .range-card .range-card-s-title {
+    font-size: 0.913rem;
+  }
+
+  .container-card{
+    padding-top: 23px;
+    padding-bottom: 38px;
+   }
+  
  }
 
  .upper-part{
   flex-direction: column;
+  padding-bottom: 0px;
+
+  .contact-card{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
   select{
    text-align: center;
@@ -600,6 +780,10 @@ nav{
 
  div.contact-card:nth-child(3) {
   border-bottom: #eeeff3 solid 1px;
+ }
+
+ #js-mapid{
+   height: 263px;
  }
 
  .middle{
@@ -638,15 +822,12 @@ nav{
  .end .footer-list {
   list-style: none;
   color: #696a6d;
-  text-align: center;
+  padding-left: 20px;
  }
 
  // Cette classe permet aux éléments ciblés d'avoir des marges internes de 16 pixels
- .pad-l-r-txt{
-    @include padding-t-b-20();
-  }
 
- .s-titre,.pad-l-r-txt{
+ .s-titre{
    @include padding-l-r-20();
  }
 
@@ -654,8 +835,22 @@ nav{
    display: none;
  }
 
+ 
  .central-list{
-   padding-top: 24px;
+  padding-top: 26px;
+  height: 217px;
+ }
+
+ .pad-mob-h-20,.nav-menu-mobile{
+   padding-left: 1.25rem;
+   padding-right: 1.25rem;
+ }
+
+ .residences{
+   p{
+     padding-top: 1.875rem;
+     padding-bottom: 0.873rem;
+   }
  }
  
 }
